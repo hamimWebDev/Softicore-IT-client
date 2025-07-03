@@ -16,8 +16,7 @@ const UpdateWorkPage = () => {
     category: "",
     technologies: "",
     liveLink: "",
-    frontend: "",
-    backend: "",
+  
   });
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -38,8 +37,7 @@ const UpdateWorkPage = () => {
         category: data.category || "",
         technologies: Array.isArray(data.technologies) ? data.technologies.join(', ') : data.technologies || "",
         liveLink: data.liveLink || "",
-        frontend: data.frontend || "",
-        backend: data.backend || "",
+        
       });
       setExistingImage(data.image || "");
     }
@@ -172,26 +170,7 @@ const UpdateWorkPage = () => {
                   required 
                 />
               </div>
-              <div>
-                <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">Frontend Repo</label>
-                <input 
-                  type="text" 
-                  name="frontend" 
-                  value={form.frontend} 
-                  onChange={handleChange} 
-                  className="w-full px-3 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                />
-              </div>
-              <div>
-                <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">Backend Repo</label>
-                <input 
-                  type="text" 
-                  name="backend" 
-                  value={form.backend} 
-                  onChange={handleChange} 
-                  className="w-full px-3 py-2 rounded border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent" 
-                />
-              </div>
+              
               <div className="md:col-span-2">
                 <label className="block mb-1 font-medium text-gray-700 dark:text-gray-200">Technologies (comma separated)</label>
                 <input 
