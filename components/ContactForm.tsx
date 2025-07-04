@@ -41,7 +41,7 @@ const ContactForm = () => {
   return (
     <div className="relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br  from-primary-50 via-white to-secondary-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 rounded-2xl"></div>
       
       {/* Animated background elements */}
       <div className="absolute top-0 left-0 w-32 h-32 bg-primary-200 dark:bg-primary-800 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>

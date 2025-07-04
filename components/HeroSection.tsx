@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
-import profileImage from "../Images/profile_image.jpg";
+import profileImage from "../Images/hero-image-2.gif";
 
 const HeroSection = () => {
   const containerVariants = {
@@ -40,31 +40,31 @@ const HeroSection = () => {
               className="inline-block mb-6 text-xl font-medium text-blue-500 dark:text-blue-300"
               variants={itemVariants}
             >
-              Business Consulting Agency
+              Professional Web Development Agency
             </motion.span>
             <motion.h1
               className="mb-4 text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white"
               variants={itemVariants}
             >
-              We're Help Growing Your <br /> Business.
+              We Build Digital Solutions <br /> That Drive Growth.
             </motion.h1>
             <motion.p
               className="mb-10 text-lg text-gray-600 dark:text-gray-300 max-w-xl"
               variants={itemVariants}
             >
-              Lorem ipsum dolor consectetuer elite we're a creative digital your business growing up.
+              Softicore IT specializes in creating custom websites, e-commerce platforms, and digital applications that help businesses thrive in the digital age. Our expert team delivers cutting-edge solutions with modern technologies.
             </motion.p>
-            <motion.div className="flex items-center gap-6" variants={itemVariants}>
-              <a href="#" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg shadow transition-all text-lg dark:bg-blue-500 dark:hover:bg-blue-600">
-                Explore More →
+            <motion.div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6" variants={itemVariants}>
+              <a href="/contact" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg shadow transition-all text-lg dark:bg-blue-500 dark:hover:bg-blue-600">
+                Start Your Project →
               </a>
-              <a href="#" className="flex items-center gap-3 group">
+              <a href="/projects" className="flex items-center gap-3 group">
                 <span className="w-14 h-14 flex items-center justify-center rounded-full border-2 border-blue-500 group-hover:bg-blue-100 dark:group-hover:bg-blue-900 dark:border-blue-400 transition-all bg-white dark:bg-gray-900">
                   <svg className="w-7 h-7 text-blue-600 dark:text-blue-300" fill="currentColor" viewBox="0 0 20 20">
                     <polygon points="7,5 15,10 7,15" />
                   </svg>
                 </span>
-                <span className="text-lg font-medium text-gray-800 dark:text-gray-200">How we work</span>
+                <span className="text-lg font-medium text-gray-800 dark:text-gray-200">View Our Work</span>
               </a>
             </motion.div>
           </div>
@@ -82,7 +82,7 @@ const HeroSection = () => {
             <div className="relative h-full w-full rounded-lg overflow-hidden shadow-xl">
               <Image
                 src={profileImage}
-                alt="Business consulting"
+                alt="Web development and digital solutions"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 style={{ objectFit: "cover" }}

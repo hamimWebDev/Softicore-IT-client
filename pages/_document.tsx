@@ -16,53 +16,62 @@ class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             name="title"
-            content="Md. Hamim Howlader Asif | MERN Stack Developer Portfolio"
+            content="Softicore IT - Professional Web Development Services | Custom Websites & Digital Solutions"
           />
           <meta
             name="description"
-            content="Explore the professional portfolio of Md. Hamim Howlader Asif, a skilled MERN Stack developer specializing in full-stack web development using MongoDB, Express.js, React, and Node.js."
+            content="Softicore IT is a leading web development company specializing in custom websites, e-commerce solutions, and digital transformation. Get professional web development services with cutting-edge technology."
           />
           <meta
             name="keywords"
-            content="MERN Stack Developer, React Developer, Node.js, MongoDB, Express, Full Stack Developer, JavaScript, Portfolio"
+            content="web development, custom websites, e-commerce development, digital solutions, software development, web design, frontend development, backend development, React development, Node.js development, MongoDB, responsive design, SEO optimization, digital transformation"
           />
-          <meta name="author" content="Md. Hamim Howlader Asif" />
+          <meta name="author" content="Softicore IT" />
           <meta name="theme-color" content="#3B82F6" />
+          <meta name="robots" content="index, follow" />
+          <meta name="language" content="English" />
+          <meta name="revisit-after" content="7 days" />
 
           {/* Open Graph / Facebook */}
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="https://hamim-portfolio.vercel.app/" />
+          <meta property="og:url" content="https://softicoreit.com/" />
           <meta
             property="og:title"
-            content="Md. Hamim Howlader Asif | MERN Stack Developer"
+            content="Softicore IT - Professional Web Development Services"
           />
           <meta
             property="og:description"
-            content="Discover projects and skills of MERN Stack Developer Hamim Howlader Asif."
+            content="Transform your business with custom web development solutions. Professional websites, e-commerce platforms, and digital applications built with cutting-edge technology."
           />
           <meta
             property="og:image"
-            content="https://hamim-portfolio.vercel.app/icon/profile_image.jpg"
+            content="https://softicoreit.com/icon/icon.png"
           />
+          <meta property="og:site_name" content="Softicore IT" />
+          <meta property="og:locale" content="en_US" />
 
           {/* Twitter */}
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://x.com/HamimWebDeV2004" />
+          <meta name="twitter:url" content="https://softicoreit.com/" />
           <meta
             name="twitter:title"
-            content="Md. Hamim Howlader Asif | MERN Stack Developer"
+            content="Softicore IT - Professional Web Development Services"
           />
           <meta
             name="twitter:description"
-            content="Discover projects and skills of MERN Stack Developer Hamim Howlader Asif."
+            content="Transform your business with custom web development solutions. Professional websites, e-commerce platforms, and digital applications."
           />
           <meta
             name="twitter:image"
-            content="https://hamim-portfolio.vercel.app/icon/profile_image.jpg"
+            content="https://softicoreit.com/icon/"
           />
 
           {/* Favicon */}
-          <link rel="icon" href="/icon/profile_image.jpg" type="image/jpeg" />
+          <link rel="icon" href="/icon/icon.png" type="image/png" />
+          <link rel="apple-touch-icon" href="/icon/icon.png" />
+          
+          {/* Canonical URL */}
+          <link rel="canonical" href="https://softicoreit.com/" />
         </Head>
         <body>
           <Main />

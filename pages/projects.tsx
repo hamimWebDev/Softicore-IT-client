@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { NextPage } from "next";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
+import { NextSeo } from 'next-seo';
+import Script from "next/script";
 
 import ProjectCard from "@/components/ProjectCard";
 import AnimatedSection from "@/components/AnimatedSection";
-import Head from "next/head";
 import { useGetAllProductsQuery } from "@/redux/features/products/productsApi";
+import { pageSEOConfigs } from '@/lib/seo-config';
 
 // Simple Tabs implementation (inline, since no UI lib found)
 const Tabs = ({ value, onValueChange, children }: any) => (
@@ -66,32 +68,67 @@ const Projects: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Projects</title>
-        <meta
-          name="description"
-          content="This is  Md. Hamim Howlader Asif's Portfolio Projects page"
-        />
-      </Head>
+      <NextSeo
+        title={pageSEOConfigs.projects.title}
+        description={pageSEOConfigs.projects.description}
+        canonical={pageSEOConfigs.projects.canonical}
+        openGraph={pageSEOConfigs.projects.openGraph}
+        additionalMetaTags={[
+          {
+            name: 'keywords',
+            content: 'web development projects, custom websites, e-commerce development, digital applications, web design portfolio, React projects, Node.js development',
+          },
+        ]}
+      />
+
+      {/* Structured Data for Projects Portfolio */}
+      <Script
+        id="projects-portfolio-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            name: 'Softicore IT Portfolio',
+            description: 'Web development projects and digital solutions portfolio',
+            numberOfItems: projectList.length,
+            itemListElement: projectList.slice(0, 10).map((project, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'CreativeWork',
+                name: project.title || `Project ${index + 1}`,
+                description: project.description || 'Web development project',
+                url: project.liveUrl || `https://softicoreit.com/projects/${project.id}`,
+                creator: {
+                  '@type': 'Organization',
+                  name: 'Softicore IT',
+                },
+              },
+            })),
+          }),
+        }}
+      />
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
       >
-        <section className="pt-32 pb-8 md:pt-40 md:pb-12">
+        <section className="pt-32 pb-8 md:pt-40 md:pb-12 bg-gradient-to-r from-blue-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
           <div className="container-custom">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                My Projects
+                Our Projects
               </h1>
               <p className="text-xl text-gray-600 dark:text-gray-400">
-                Explore my latest work and creative solutions.
+                Explore our portfolio of successful web development projects and digital solutions.
               </p>
             </div>
           </div>
         </section>
-        <section className="py-8">
+        <section className="py-8 bg-gradient-to-r from-blue-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
           <div className="container-custom">
             <Tabs value={tabValue} onValueChange={setTabValue}>
               {({ value, onValueChange }: any) => (
@@ -116,7 +153,7 @@ const Projects: NextPage = () => {
                       <AnimatePresence>
                         {filteredProjects.slice(0, visibleItems).map((project, index) => (
                           <motion.div
-                            key={project.id}
+                            key={index}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: 20 }}

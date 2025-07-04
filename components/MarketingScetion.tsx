@@ -36,7 +36,7 @@ const features = [
 
 const MarketingScetion = () => {
   return (
-    <section className="py-24 bg-gradient-to-r from-blue-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section className="py-0 lg:py-24 bg-gradient-to-r from-blue-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
         {/* Left: Image with abstract shapes */}
         <div className="flex-1 flex items-center justify-center relative">

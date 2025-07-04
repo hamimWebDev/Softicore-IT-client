@@ -1,26 +1,29 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
-
+import logo from '../public/icon/logo.png'
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 py-12">
+    <footer className="relative bg-blue-200 dark:bg-gray-900 py-12 overflow-hidden">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo and tagline */}
           <div className="col-span-1 md:col-span-2">
             {/* Logo */}
-            <Link href="/" className="cursor-pointer text-xl flex items-end">
-              <img
-                src="https://i.ibb.co/jHbyW2c/p.png"
-                alt=""
-                className="w-8"
+            <Link href="/" className="cursor-pointer">
+              <Image
+                src={logo}
+                alt="Logo"
+                width={300}
+                height={300}
+                className="w-52"
+
               />
-              <span className="text-3xl text-white font-bold">ort</span>
-              <span className="text-3xl font-bold text-primary-500">folio</span>
+
             </Link>
-            
+
             <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-md">
               Building innovative web solutions with modern technology stacks.
               Specializing in MERN development with a focus on performance and
@@ -111,7 +114,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
           <p className="text-center text-gray-600 dark:text-gray-400">
-            © {currentYear} Hamim Portfolio. All rights reserved.
+            © {currentYear} Softicore IT. All rights reserved.
           </p>
         </div>
       </div>

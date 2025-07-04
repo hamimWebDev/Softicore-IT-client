@@ -8,6 +8,8 @@ import { store } from "@/redux/store";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import PiriLoader from "@/components/PiriLoader";
+import { DefaultSeo } from 'next-seo';
+import { defaultSEOConfig } from '@/lib/seo-config';
 
 export default function App({ Component, pageProps, router }: AppProps) {
   const [loading, setLoading] = useState(false);
@@ -35,6 +37,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
   return (
     <Provider store={store}>
       <AuthProvider>
+        <DefaultSeo {...defaultSEOConfig} />
         <MainLayout>
           {loading && <PiriLoader />}
           <AnimatePresence mode="wait">
