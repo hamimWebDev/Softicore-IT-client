@@ -3,7 +3,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 class MyDocument extends Document {
   render() {
     return (
-      <Html lang="en" className="dark">
+      <Html lang="en">
         <Head>
           {/* Google Fonts */}
           <link
@@ -67,15 +67,7 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          {/* Ensure dark mode is always applied */}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-              `,
-            }}
-          />
+          {/* Theme is now handled dynamically */}
         </body>
       </Html>
     );

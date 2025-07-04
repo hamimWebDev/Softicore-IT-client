@@ -4,10 +4,9 @@ import { FaChartBar, FaCog, FaGraduationCap, FaBlogger, FaBriefcase, FaCode, FaB
 
 const adminSidebarLinks = [
   { href: "/dashboard", label: "Dashboard", icon: <FaChartBar size={28} /> },
-  { href: "/dashboard/skills", label: "Skills", icon: <FaCog size={28} /> },
-  { href: "/dashboard/education", label: "Education", icon: <FaGraduationCap size={28} /> },
+  
   { href: "/dashboard/blogs", label: "Blogs", icon: <FaBlogger size={28} /> },
-  { href: "/dashboard/work-experience", label: "Work Experience", icon: <FaBriefcase size={28} /> },
+  
   { href: "/dashboard/work", label: "Work", icon: <FaCode size={28} /> },
 ];
 

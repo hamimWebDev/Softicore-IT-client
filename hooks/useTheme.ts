@@ -1,22 +1,40 @@
 import { setTheme } from "@/redux/themeSlice";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 
 export const useTheme = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
+  const darkMode = useAppSelector((state) => state.theme.darkMode);
 
-  // Initialize theme on mount - always use dark mode
+  // Sync theme with localStorage and document class
   useEffect(() => {
-    // Always set to dark mode
-    dispatch(setTheme(true));
-    
-    // Always add dark class to document
-    document.documentElement.classList.add("dark");
-    localStorage.setItem("theme", "dark");
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme === "dark") {
+      dispatch(setTheme(true));
+      document.documentElement.classList.add("dark");
+    } else if (storedTheme === "light") {
+      dispatch(setTheme(false));
+      document.documentElement.classList.remove("dark");
+    }
   }, [dispatch]);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [darkMode]);
+
+  const toggleTheme = () => {
+    dispatch(setTheme(!darkMode));
+  };
+
   return {
-    darkMode: true, // Always return true for dark mode
+    darkMode,
+    toggleTheme,
   };
 };
 

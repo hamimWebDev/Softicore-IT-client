@@ -26,7 +26,7 @@ const HomeBlogs = () => {
       <AnimatedSection className="text-center mb-16">
         <div className="lg:py-10 mb-11 lg:mt-1 ">
           <div className="text-center">
-            <h3 className="text-4xl text-[#00C0FF] ">
+            <h3 className="text-4xl text-primary-500 ">
               &lt; Blogs /&gt;
             </h3>
             <h1 className="text-3xl mt-3 lg:text-5xl text-white font-bold lg:mt-5">

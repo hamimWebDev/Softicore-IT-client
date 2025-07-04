@@ -4,10 +4,7 @@ import Link from "next/link";
 import { FaCog, FaGraduationCap, FaBlogger, FaBriefcase, FaCode } from "react-icons/fa";
 
 const quickLinks = [
-  { href: "/dashboard/skills", label: "Manage Skills", icon: <FaCog size={28} /> },
-  { href: "/dashboard/education", label: "Manage Education", icon: <FaGraduationCap size={28} /> },
   { href: "/dashboard/blogs", label: "Manage Blogs", icon: <FaBlogger size={28} /> },
-  { href: "/dashboard/work-experience", label: "Manage Work Experience", icon: <FaBriefcase size={28} /> },
   { href: "/dashboard/work", label: "Manage Work", icon: <FaCode size={28} /> },
 ];
 

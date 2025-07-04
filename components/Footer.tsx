@@ -18,7 +18,7 @@ const Footer = () => {
                 className="w-8"
               />
               <span className="text-3xl text-white font-bold">ort</span>
-              <span className="text-3xl font-bold text-[#00C0FF]">folio</span>
+              <span className="text-3xl font-bold text-primary-500">folio</span>
             </Link>
             
             <p className="mt-4 text-gray-600 dark:text-gray-400 max-w-md">

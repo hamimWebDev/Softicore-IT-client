@@ -4,22 +4,15 @@ import { NextPage } from "next";
 import HeroSection from "@/components/HeroSection";
 import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
-import Image from "next/image";
-import { useDispatch, useSelector } from "react-redux";
-
-import ProjectCard from "@/components/ProjectCard";
-import Skills from "@/components/Skills";
 import HomeBlogs from "@/components/HomeBlogs";
-import Journey from "@/components/AllJourney/Journey";
-import { RootState } from "@/redux/store";
 import HomeProject from "./homeProject";
-import Head from "next/head";
+
 
 const Home: NextPage = () => {
 
   return (
     <div>
-     
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -28,17 +21,17 @@ const Home: NextPage = () => {
       >
 
         <HeroSection />
-        <Skills />
+
         {/* Featured Projects Section */}
         <section className="py-20">
           <div className="container-custom">
             <AnimatedSection className="text-center mb-16">
               <div className="lg:py-10 mb-11 lg:mt-1 ">
                 <div className="text-center">
-                  <h3 className="text-4xl text-[#00C0FF] ">
+                  <h3 className="text-4xl text-primary-500 ">
                     &lt; Projects /&gt;
                   </h3>
-                  <h1 className="text-3xl mt-3 lg:text-5xl text-white font-bold lg:mt-5">
+                  <h1 className="text-3xl mt-3 lg:text-5xl text-gray-900 dark:text-white font-bold lg:mt-5">
                     My Featured Projects
                   </h1>
                 </div>
@@ -48,7 +41,7 @@ const Home: NextPage = () => {
 
           </div>
         </section>
-        <Journey />
+
 
         <HomeBlogs />
 
@@ -58,10 +51,10 @@ const Home: NextPage = () => {
             <AnimatedSection className="text-center mb-16">
               <div className="lg:py-10 mb-11 lg:mt-1 ">
                 <div className="text-center">
-                  <h3 className="text-4xl text-[#00C0FF] ">
+                  <h3 className="text-4xl text-primary-500 ">
                     &lt; Expertise /&gt;
                   </h3>
-                  <h1 className="text-3xl mt-3 lg:text-5xl text-white font-bold lg:mt-5">
+                  <h1 className="text-3xl mt-3 lg:text-5xl text-gray-900 dark:text-white font-bold lg:mt-5">
                     My Technical Expertise
                   </h1>
                 </div>

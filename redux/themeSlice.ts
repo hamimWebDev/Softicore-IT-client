@@ -5,9 +5,18 @@ type ThemeState = {
   darkMode: boolean;
 };
 
-// Always use dark mode
+// Read initial theme from localStorage if available
+const getInitialTheme = (): boolean => {
+  if (typeof window !== 'undefined') {
+    const stored = localStorage.getItem('theme');
+    if (stored === 'light') return false;
+    return true; // default to dark
+  }
+  return true;
+};
+
 const initialState: ThemeState = {
-  darkMode: true,
+  darkMode: true, // will be updated on mount
 };
 
 export const themeSlice = createSlice({

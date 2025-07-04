@@ -8,6 +8,8 @@ import profileImage from "../Images/H-letter-logo.jpg";
 import Image from "next/image";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { logout } from "@/redux/features/auth/authSlice";
+import { FaMoon, FaSun } from "react-icons/fa";
+import useTheme from "@/hooks/useTheme";
 
 const navItems = [
   { name: "Home", path: "/" },
@@ -24,6 +26,7 @@ const Navbar = () => {
   const router = useRouter();
   const dispatch = useAppDispatch();
   const { user, token } = useAppSelector((state) => state.auth);
+  const { darkMode, toggleTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -56,7 +59,7 @@ const Navbar = () => {
         <Link href="/" className="cursor-pointer text-xl flex items-end">
           <img src="https://i.ibb.co/jHbyW2c/p.png" alt="" className="w-8" />
           <span className="text-3xl text-white font-bold">ort</span>
-          <span className="text-3xl font-bold text-[#00C0FF]">folio</span>
+          <span className="text-3xl font-bold text-primary-500">folio</span>
         </Link>
 
         {/* Desktop Nav */}
@@ -80,6 +83,14 @@ const Navbar = () => {
               )}
             </Link>
           ))}
+          {/* Theme Toggle Button (Desktop) */}
+          <button
+            onClick={toggleTheme}
+            className="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-800" />}
+          </button>
         </div>
         <div className="flex items-center gap-4">
           {mounted && user && (
@@ -144,6 +155,23 @@ const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            {/* Theme Toggle Button (Mobile) */}
+            <button
+              onClick={toggleTheme}
+              className="w-full flex items-center justify-center px-4 py-2 rounded bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+              aria-label="Toggle dark mode"
+              style={{ marginTop: 8 }}
+            >
+              {darkMode ? (
+                <>
+                  <FaSun className="text-yellow-400 mr-2" /> Light Mode
+                </>
+              ) : (
+                <>
+                  <FaMoon className="text-gray-800 mr-2" /> Dark Mode
+                </>
+              )}
+            </button>
             {/* Mobile Dashboard Button */}
             {mounted && user && (
               <Link

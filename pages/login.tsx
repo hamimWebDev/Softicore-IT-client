@@ -106,7 +106,7 @@ const Login = () => {
                   name="email"
                   type="email"
                   required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-700 bg-[#1e293b]/60 placeholder-gray-400 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-700 bg-gray-800/60 dark:bg-gray-800/60 placeholder-gray-400 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-colors"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -130,7 +130,7 @@ const Login = () => {
                     name="password"
                     type={showPassword ? "text" : "password"}
                     required
-                    className="mt-1 block w-full px-3 py-2 border border-gray-700 bg-[#1e293b]/60 placeholder-gray-400 text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm pr-10 transition-colors"
+                    className="mt-1 block w-full px-3 py-2 border border-gray-700 bg-gray-800/60 dark:bg-gray-800/60 placeholder-gray-400 text-gray-900 dark:text-gray-100 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm pr-10 transition-colors"
                     placeholder="Enter your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
