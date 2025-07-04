@@ -6,6 +6,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Link from "next/link";
 import HomeBlogs from "@/components/HomeBlogs";
 import HomeProject from "./homeProject";
+import FeaturesSection from "@/components/FeaturesSection";
 
 
 const Home: NextPage = () => {
@@ -21,6 +22,7 @@ const Home: NextPage = () => {
       >
 
         <HeroSection />
+        <FeaturesSection/>
 
         {/* Featured Projects Section */}
         <section className="py-20">
