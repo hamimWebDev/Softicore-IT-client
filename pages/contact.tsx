@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import { FiMapPin, FiMail, FiPhone, FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
+import { FiMapPin, FiMail, FiPhone, FiGithub, FiLinkedin, FiTwitter, FiFacebook } from "react-icons/fi";
 import { NextSeo } from 'next-seo';
 import Script from "next/script";
 import ContactForm from "@/components/ContactForm";
@@ -40,7 +40,7 @@ const Contact: NextPage = () => {
                 '@type': 'ContactPoint',
                 telephone: '+880-1234-567890',
                 contactType: 'customer service',
-                email: 'info@softicoreit.com',
+                email: 'softicoreit@gmail.com',
                 availableLanguage: 'English',
               },
               address: {
@@ -86,7 +86,7 @@ const Contact: NextPage = () => {
                       </span>
                       <div>
                         <div className="font-semibold text-gray-900 dark:text-white">Email</div>
-                        <div className="text-gray-400 text-sm">info@softicoreit.com</div>
+                        <div className="text-gray-400 text-sm">softicoreit@gmail.com</div>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -110,6 +110,9 @@ const Contact: NextPage = () => {
                       </a>
                       <a href="https://twitter.com/softicoreit" target="_blank" rel="noopener noreferrer" className="bg-gray-200 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-600 text-gray-900 dark:text-white p-2 rounded-full transition-colors">
                         <FiTwitter size={20} />
+                      </a>
+                      <a href="https://www.facebook.com/softicoreit" target="_blank" rel="noopener noreferrer" className="bg-gray-200 dark:bg-gray-700 hover:bg-primary-100 dark:hover:bg-primary-600 text-gray-900 dark:text-white p-2 rounded-full transition-colors">
+                        <FiFacebook size={20} />
                       </a>
                     </div>
                   </div>

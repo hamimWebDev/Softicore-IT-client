@@ -1,63 +1,63 @@
 import { baseApi } from "../../api/baseApi";
-import { IWork, ICreateWorkRequest } from "../../../types/work.types";
+import { ITeam } from "../../../types/team.types";
 
-const productsApi = baseApi.injectEndpoints({
-  endpoints: (builder) => ({
-    getAllProducts: builder.query<IWork[], void>({
+const teamApi = baseApi.injectEndpoints({
+  endpoints: (builder: any) => ({
+    getAllTeamMembers: builder.query({
       query: () => {
-        let url = "/work";
+        let url = "/team";
         return {
           url,
           method: "GET",
         };
       },
-      providesTags: ["products"],
+      providesTags: ["team"],
       transformResponse: (response: any) => {
         return response?.data;
       },
     }),
-    getProductById: builder.query({
+    getTeamMemberById: builder.query({
       query: (id: string) => ({
-        url: `/work/${id}`,
+        url: `/team/${id}`,
         method: "GET",
       }),
-      providesTags: (result: any, error: any, id: string) => [{ type: "products", id }],
+      providesTags: (result: any, error: any, id: string) => [{ type: "team", id }],
       transformResponse: (response: any) => {
         return response?.data;
       },
     }),
-    createProduct: builder.mutation({
+    createTeamMember: builder.mutation({
       query: (formData: FormData) => ({
-        url: "/work",
+        url: "/team",
         method: "POST",
         body: formData,
         // Don't set Content-Type header for FormData, let the browser set it with boundary
       }),
-      invalidatesTags: ["products"],
+      invalidatesTags: ["team"],
     }),
-    updateProduct: builder.mutation({
+    updateTeamMember: builder.mutation({
       query: ({ id, formData }: { id: string; formData: FormData }) => ({
-        url: `/work/${id}`,
+        url: `/team/${id}`,
         method: "PUT",
         body: formData,
         // Don't set Content-Type header for FormData, let the browser set it with boundary
       }),
-      invalidatesTags: ["products"],
+      invalidatesTags: ["team"],
     }),
-    deleteProduct: builder.mutation({
+    deleteTeamMember: builder.mutation({
       query: (id: string) => ({
-        url: `/work/${id}`,
+        url: `/team/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["products"],
+      invalidatesTags: ["team"],
     }),
   }),
 });
 
 export const {
-  useGetAllProductsQuery,
-  useGetProductByIdQuery,
-  useCreateProductMutation,
-  useUpdateProductMutation,
-  useDeleteProductMutation,
-} = productsApi;
+  useGetAllTeamMembersQuery,
+  useGetTeamMemberByIdQuery,
+  useCreateTeamMemberMutation,
+  useUpdateTeamMemberMutation,
+  useDeleteTeamMemberMutation,
+} = teamApi;

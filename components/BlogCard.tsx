@@ -16,7 +16,26 @@ export interface IBlog {
   updatedAt: Date;
 }
 
+// Helper function to truncate content
+const truncateContent = (content: string, maxLength: number = 150): string => {
+  if (content.length <= maxLength) {
+    return content;
+  }
+  
+  // Find the last space within the limit to avoid cutting words
+  const truncated = content.substring(0, maxLength);
+  const lastSpace = truncated.lastIndexOf(' ');
+  
+  if (lastSpace > 0) {
+    return truncated.substring(0, lastSpace) + '...';
+  }
+  
+  return truncated + '...';
+};
+
 const BlogCard = ({ blog }: { blog: IBlog }) => {
+  const truncatedContent = truncateContent(blog.content);
+
   return (
     <div className="bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden flex flex-col transition-transform duration-300 hover:scale-[1.03] hover:shadow-3xl max-w-lg w-full">
       {/* Image */}
@@ -52,8 +71,8 @@ const BlogCard = ({ blog }: { blog: IBlog }) => {
           </span>
         </div>
         {/* Description */}
-        <p className="text-gray-600 dark:text-gray-300 text-lg line-clamp-2 mb-6">
-          {blog.content}
+        <p className="text-gray-600 dark:text-gray-300 text-lg line-clamp-2 mb-6 min-h-[3.5rem]">
+          {truncatedContent}
         </p>
         {/* Read More Button */}
         <div className="mt-auto">

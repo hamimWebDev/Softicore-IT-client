@@ -1,6 +1,6 @@
 import { ReactNode, useState } from "react";
 import Link from "next/link";
-import { FaChartBar, FaCog, FaGraduationCap, FaBlogger, FaBriefcase, FaCode, FaBars, FaTimes } from "react-icons/fa";
+import { FaChartBar, FaCog, FaGraduationCap, FaBlogger, FaBriefcase, FaCode, FaBars, FaTimes, FaUsers, FaHandshake, FaUserPlus } from "react-icons/fa";
 
 const adminSidebarLinks = [
   { href: "/dashboard", label: "Dashboard", icon: <FaChartBar size={28} /> },
@@ -8,13 +8,19 @@ const adminSidebarLinks = [
   { href: "/dashboard/blogs", label: "Blogs", icon: <FaBlogger size={28} /> },
   
   { href: "/dashboard/work", label: "Work", icon: <FaCode size={28} /> },
+  
+  { href: "/dashboard/team", label: "Team", icon: <FaUsers size={28} /> },
+  
+  { href: "/dashboard/clients", label: "Clients", icon: <FaHandshake size={28} /> },
+  
+  { href: "/dashboard/create-admin", label: "Create Admin", icon: <FaUserPlus size={28} /> },
 ];
 
 export default function AdminDashboardLayout({ children }: { children: ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex min-h-screen bg-gray-50 dark:bg-gray-900 mt-16">
+    <div className="flex min-h-screen bg-gray-50 dark:bg-gray-900 mt-20">
       {/* Mobile Hamburger Button */}
       <button
         className="md:hidden fixed mt-[66px] top-6 right-4 z-40 bg-white dark:bg-gray-800 p-2 rounded-full shadow"

@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import AdminDashboardLayout from "@/components/AdminDashboardLayout";
 import PrivateRoute from "@/pages/utils/PrivateRoute";
-import { useRegisterMutation } from "@/redux/features/auth/authApi";
 import { useCreateProductMutation } from "@/redux/features/products/productsApi";
 import { ICreateWorkForm, ICreateWorkRequest } from "@/types/work.types";
 

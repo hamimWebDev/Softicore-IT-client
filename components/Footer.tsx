@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FiGithub, FiLinkedin, FiTwitter, FiMail } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiTwitter, FiMail, FiFacebook } from "react-icons/fi";
 import logo from '../public/icon/logo.png'
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -75,7 +75,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/softicoreit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -84,7 +84,7 @@ const Footer = () => {
                 <FiGithub size={20} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/company/softicoreit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -93,7 +93,7 @@ const Footer = () => {
                 <FiLinkedin size={20} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://twitter.com/softicoreit"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
@@ -102,7 +102,16 @@ const Footer = () => {
                 <FiTwitter size={20} />
               </a>
               <a
-                href="mailto:contact@example.com"
+                href="https://www.facebook.com/softicoreit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                aria-label="Facebook"
+              >
+                <FiFacebook size={20} />
+              </a>
+              <a
+                href="mailto:softicoreit@gmail.com"
                 className="text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                 aria-label="Email"
               >

@@ -65,7 +65,7 @@ const Login = () => {
             >
               Sign in to your account
             </motion.h2>
-            <div className="flex gap-4 mt-2">
+            {/* <div className="flex gap-4 mt-2">
               <Button
                 variant="outline"
                 size="sm"
@@ -86,7 +86,7 @@ const Login = () => {
               >
                 User Credentials
               </Button>
-            </div>
+            </div> */}
           </div>
           <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
             <div className="rounded-md space-y-4">

@@ -1,63 +1,63 @@
 import { baseApi } from "../../api/baseApi";
-import { IWork, ICreateWorkRequest } from "../../../types/work.types";
+import { IClient } from "../../../types/client.types";
 
-const productsApi = baseApi.injectEndpoints({
-  endpoints: (builder) => ({
-    getAllProducts: builder.query<IWork[], void>({
+const clientApi = baseApi.injectEndpoints({
+  endpoints: (builder: any) => ({
+    getAllClients: builder.query({
       query: () => {
-        let url = "/work";
+        let url = "/client";
         return {
           url,
           method: "GET",
         };
       },
-      providesTags: ["products"],
+      providesTags: ["client"],
       transformResponse: (response: any) => {
         return response?.data;
       },
     }),
-    getProductById: builder.query({
+    getClientById: builder.query({
       query: (id: string) => ({
-        url: `/work/${id}`,
+        url: `/client/${id}`,
         method: "GET",
       }),
-      providesTags: (result: any, error: any, id: string) => [{ type: "products", id }],
+      providesTags: (result: any, error: any, id: string) => [{ type: "client", id }],
       transformResponse: (response: any) => {
         return response?.data;
       },
     }),
-    createProduct: builder.mutation({
+    createClient: builder.mutation({
       query: (formData: FormData) => ({
-        url: "/work",
+        url: "/client",
         method: "POST",
         body: formData,
         // Don't set Content-Type header for FormData, let the browser set it with boundary
       }),
-      invalidatesTags: ["products"],
+      invalidatesTags: ["client"],
     }),
-    updateProduct: builder.mutation({
+    updateClient: builder.mutation({
       query: ({ id, formData }: { id: string; formData: FormData }) => ({
-        url: `/work/${id}`,
+        url: `/client/${id}`,
         method: "PUT",
         body: formData,
         // Don't set Content-Type header for FormData, let the browser set it with boundary
       }),
-      invalidatesTags: ["products"],
+      invalidatesTags: ["client"],
     }),
-    deleteProduct: builder.mutation({
+    deleteClient: builder.mutation({
       query: (id: string) => ({
-        url: `/work/${id}`,
+        url: `/client/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: ["products"],
+      invalidatesTags: ["client"],
     }),
   }),
 });
 
 export const {
-  useGetAllProductsQuery,
-  useGetProductByIdQuery,
-  useCreateProductMutation,
-  useUpdateProductMutation,
-  useDeleteProductMutation,
-} = productsApi;
+  useGetAllClientsQuery,
+  useGetClientByIdQuery,
+  useCreateClientMutation,
+  useUpdateClientMutation,
+  useDeleteClientMutation,
+} = clientApi;

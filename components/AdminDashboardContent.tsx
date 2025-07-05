@@ -1,11 +1,14 @@
 import PrivateRoute from "@/pages/utils/PrivateRoute";
 import { useAppSelector } from "@/redux/hooks";
 import Link from "next/link";
-import { FaCog, FaGraduationCap, FaBlogger, FaBriefcase, FaCode } from "react-icons/fa";
+import { FaCog, FaGraduationCap, FaBlogger, FaBriefcase, FaCode, FaUsers, FaHSquare, FaHandshake, FaUserPlus } from "react-icons/fa";
 
 const quickLinks = [
   { href: "/dashboard/blogs", label: "Manage Blogs", icon: <FaBlogger size={28} /> },
   { href: "/dashboard/work", label: "Manage Work", icon: <FaCode size={28} /> },
+  { href: "/dashboard/team", label: "Manage Team", icon: <FaUsers size={28} /> },
+  { href: "/dashboard/clients", label: "Manage Clients", icon: <FaHandshake size={28} /> },
+  { href: "/dashboard/create-admin", label: "Create Admin", icon: <FaUserPlus size={28} /> },
 ];
 
 const AdminDashboardContent = () => {

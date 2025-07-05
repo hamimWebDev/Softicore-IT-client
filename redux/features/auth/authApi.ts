@@ -10,12 +10,13 @@ const authApi = baseApi.injectEndpoints({
                 body: userInfo,
             }),
         }),
-        // register
-        register: builder.mutation({
-            query: (userInfo: any) => ({
+       
+        // create admin
+        createAdmin: builder.mutation({
+            query: (adminInfo: any) => ({
                 url: '/auth/signup',
                 method: 'POST',
-                body: userInfo,
+                body: adminInfo,
             }),
         }),
         getSingleUser: builder.query<IUser, string>({
@@ -29,4 +30,4 @@ const authApi = baseApi.injectEndpoints({
     }),
 })
 
-export const { useLoginMutation, useGetSingleUserQuery, useRegisterMutation} = authApi;
+export const { useLoginMutation, useGetSingleUserQuery, useCreateAdminMutation} = authApi;

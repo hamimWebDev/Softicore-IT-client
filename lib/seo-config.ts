@@ -76,6 +76,22 @@ export const defaultSEOConfig: DefaultSeoProps = {
       name: 'format-detection',
       content: 'telephone=no',
     },
+    {
+      property: 'og:site_name',
+      content: 'Softicore IT',
+    },
+    {
+      property: 'og:locale',
+      content: 'en_US',
+    },
+    {
+      property: 'fb:pages',
+      content: '', // Add your Facebook Page ID if you have one
+    },
+    {
+      property: 'fb:app_id',
+      content: 'https://www.facebook.com/softicoreit', // Add your Facebook App ID if you have one
+    },
   ],
   additionalLinkTags: [
     {
@@ -138,6 +154,16 @@ export const pageSEOConfigs = {
       url: 'https://softicoreit.com/projects',
     },
   },
+  projectDetails: {
+    title: 'Project Details - Web Development Portfolio',
+    description: 'Detailed view of our web development project showcasing technologies used, features implemented, and project outcomes.',
+    canonical: 'https://softicoreit.com/projects/[id]',
+    openGraph: {
+      title: 'Project Details | Softicore IT - Web Development Portfolio',
+      description: 'Detailed view of our web development project showcasing technologies used, features implemented, and project outcomes.',
+      url: 'https://softicoreit.com/projects/[id]',
+    },
+  },
   blogs: {
     title: 'Blog - Web Development Insights & Tips',
     description: 'Stay updated with the latest web development trends, tips, and insights from Softicore IT. Read about React, Node.js, e-commerce development, and digital transformation strategies.',
@@ -178,12 +204,13 @@ export const structuredData = {
       '@type': 'ContactPoint',
       telephone: '+880-1234-567890',
       contactType: 'customer service',
-      email: 'info@softicoreit.com',
+      email: 'softicoreit@gmail.com',
     },
     sameAs: [
       'https://github.com/softicoreit',
       'https://linkedin.com/company/softicoreit',
       'https://twitter.com/softicoreit',
+      'https://www.facebook.com/softicoreit',
     ],
     serviceType: 'Web Development',
     areaServed: 'Worldwide',
@@ -244,7 +271,7 @@ export const structuredData = {
     description: 'Professional web development company in Dhaka, Bangladesh',
     url: 'https://softicoreit.com',
     telephone: '+880-1234-567890',
-    email: 'info@softicoreit.com',
+    email: 'softicoreit@gmail.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Dhaka',
