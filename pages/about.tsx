@@ -72,13 +72,13 @@ const About: NextPage = () => {
 
       <div className="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         {/* Hero Section */}
-        <section className="pt-28 pb-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white">
+        <section className="pt-28 pb-16 text-gray-900 dark:text-white">
           <div className="container-custom mx-auto px-4 text-center">
             <AnimatedSection>
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                About <span className="text-yellow-300">Softicore IT</span>
+                About <span className="text-blue-600 dark:text-yellow-200">Softicore IT</span>
               </h1>
-              <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
+              <p className="text-xl md:text-2xl text-gray-700 dark:text-blue-200 max-w-3xl mx-auto">
                 Transforming ideas into powerful digital experiences through innovative web development solutions.
               </p>
             </AnimatedSection>
@@ -91,7 +91,7 @@ const About: NextPage = () => {
             {/* Company Image */}
             <AnimatedSection className="flex justify-center lg:justify-start">
               <div className="relative">
-                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-800 bg-white dark:bg-gray-800 flex items-center justify-center">
+                <div className="w-80 h-80 rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-gray-700 bg-white dark:bg-gray-800 flex items-center justify-center">
                   <Image
                     src="/icon/icon.png"
                     alt="Softicore IT Logo"
@@ -101,7 +101,7 @@ const About: NextPage = () => {
                     priority
                   />
                 </div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-500 to-purple-600 dark:from-blue-400 dark:to-purple-500 rounded-full flex items-center justify-center shadow-lg">
                   <span className="text-white text-2xl">💻</span>
                 </div>
               </div>
@@ -201,22 +201,86 @@ const About: NextPage = () => {
           </div>
         </section>
 
+        {/* Team Section */}
+        <section className="py-16 bg-white dark:bg-gray-900">
+          <div className="container-custom mx-auto px-4">
+            <AnimatedSection className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">
+                Meet Our Team
+              </h2>
+              <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                Our diverse team of experts brings together years of experience in web development, design, and digital strategy.
+              </p>
+            </AnimatedSection>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {/* Team Member 1 */}
+              <AnimatedSection className="group">
+                <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg">
+                    <Image
+                      src="/icon/profile_image.jpg"
+                      alt="Team Member"
+                      width={96}
+                      height={96}
+                      className="object-cover w-full h-full"
+                    />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Md. Hamim</h3>
+                  <p className="text-blue-600 dark:text-blue-400 font-medium mb-3">Lead Developer</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    Full-stack developer with expertise in modern web technologies and cloud solutions.
+                  </p>
+                </div>
+              </AnimatedSection>
+
+              {/* Team Member 2 */}
+              <AnimatedSection className="group">
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg bg-gradient-to-br from-purple-400 to-pink-400 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">UI</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">UI/UX Designer</h3>
+                  <p className="text-purple-600 dark:text-purple-400 font-medium mb-3">Creative Designer</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    Passionate about creating intuitive and beautiful user experiences that delight users.
+                  </p>
+                </div>
+              </AnimatedSection>
+
+              {/* Team Member 3 */}
+              <AnimatedSection className="group">
+                <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-2xl p-6 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-200 dark:border-gray-600">
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg bg-gradient-to-br from-green-400 to-blue-400 flex items-center justify-center">
+                    <span className="text-white text-2xl font-bold">DEV</span>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Backend Developer</h3>
+                  <p className="text-green-600 dark:text-green-400 font-medium mb-3">System Architect</p>
+                  <p className="text-gray-600 dark:text-gray-400 text-sm">
+                    Expert in building scalable backend systems and database architecture.
+                  </p>
+                </div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 text-white">
+        <section className="py-16 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-800 dark:via-purple-800 dark:to-indigo-800 text-white">
           <div className="container-custom mx-auto px-4 text-center">
             <AnimatedSection>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 Ready to Start Your Project?
               </h2>
-              <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-                Let's discuss how we can help bring your digital vision to life with our expert web development services.
+              <p className="text-xl text-blue-100 dark:text-blue-200 mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help bring your vision to life with our innovative web development solutions.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <Link href="/contact" passHref legacyBehavior>
-                  <a><Button variant="secondary" size="lg">Start a Project</Button></a>
+                  <a><Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600 dark:hover:bg-white dark:hover:text-blue-600">Get Started</Button></a>
                 </Link>
                 <Link href="/projects" passHref legacyBehavior>
-                  <a><Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-blue-600">View Portfolio</Button></a>
+                  <a><Button variant="ghost" size="lg" className="text-white hover:bg-white/20">View Portfolio</Button></a>
                 </Link>
               </div>
             </AnimatedSection>

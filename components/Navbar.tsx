@@ -68,9 +68,9 @@ const Navbar = () => {
           <Image
             src={logo}
             alt="Logo"
-            width={300}
-            height={300}
-            className="w-44"
+            width={100}
+            height={100}
+            className="w-36"
 
           />
 

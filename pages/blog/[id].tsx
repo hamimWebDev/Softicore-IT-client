@@ -45,7 +45,7 @@ const BlogDetails = () => {
           <div className="flex items-center gap-6 mb-6">
             <span className="inline-flex items-center gap-1 text-gray-700 dark:text-gray-300 font-medium text-base">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mr-1 text-gray-400 dark:text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5.121 17.804A13.937 13.937 0 0012 20c2.5 0 4.847-.655 6.879-1.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
               {blog.author}
             </span>
