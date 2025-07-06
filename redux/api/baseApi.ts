@@ -14,7 +14,7 @@ import { logout, setUser } from "../features/auth/authSlice";
 import { RootState } from "../store"; // Assuming your RootState is exported from here
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://softicore-it-server.vercel.app/api",
+  baseUrl: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api",
   credentials: "include",
   prepareHeaders: (headers, { getState }) => {
     // Add { getState } parameter
@@ -41,7 +41,7 @@ const baseQueryWithRefreshToken: BaseQueryFn<
   }
   if (result?.error?.status === 401) {
     const res = await fetch(
-      "https://softicore-it-server.vercel.app/api/auth/refresh-token",
+      `${process.env.NEXT_PUBLIC_API_URL}/auth/refresh-token`,
       {
         method: "POST",
         credentials: "include",
