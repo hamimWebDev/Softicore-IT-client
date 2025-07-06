@@ -9,7 +9,7 @@ const features = [
         <path d="M10 16l4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "Great Support Team alltime Active",
+    text: "24/7 Expert Support Team",
     color: "text-indigo-500",
   },
   {
@@ -19,7 +19,7 @@ const features = [
         <path d="M10 16l4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "Marketing Research Team",
+    text: "Modern Web & Mobile Solutions",
     color: "text-orange-400",
   },
   {
@@ -29,7 +29,7 @@ const features = [
         <path d="M10 16l4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
-    text: "Business Analysis & Marketing",
+    text: "Fast & Reliable IT Services",
     color: "text-cyan-400",
   },
 ];
@@ -46,9 +46,9 @@ const MarketingScetion = () => {
           <div className="relative w-[400px] h-[460px] md:w-[480px] md:h-[540px] rounded-[40%] overflow-hidden shadow-xl">
             <Image
               src={MarketingImage}
-              alt="Marketing"
+              alt="Softicore IT Services"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
               style={{ objectFit: "cover" }}
               className="rounded-[40%]"
               priority
@@ -57,12 +57,12 @@ const MarketingScetion = () => {
         </div>
         {/* Right: Content */}
         <div className="flex-1 max-w-xl">
-          <div className="text-indigo-500 font-semibold mb-2 text-lg">Agency Features</div>
+          <div className="text-indigo-500 font-semibold mb-2 text-lg">Why Choose Softicore IT</div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
-            A helping hand agency <br /> for Business
+            Your Trusted Partner for <br /> Digital Success
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, seieiusmoed dui too consecteture elite more.According to ipsum dolor seat ameat consecteture elite.
+            We help businesses grow with modern technology solutions. Our team creates websites, mobile apps, and software that work perfectly for your business needs. We make technology simple and effective.
           </p>
           <ul className="space-y-5 mb-10">
             {features.map((feature, idx) => (
@@ -75,7 +75,7 @@ const MarketingScetion = () => {
             ))}
           </ul>
           <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-10 py-4 rounded-lg text-lg shadow transition-all">
-            Get Started &rarr;
+            Start Your Project &rarr;
           </button>
         </div>
       </div>

@@ -206,7 +206,7 @@ const OurClients: NextPage = () => {
                           <img
                             src={client.image}
                             alt={client.name}
-                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                            className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                             onError={(e) => {
                               e.currentTarget.src = "/icon/profile_image.jpg";
                             }}

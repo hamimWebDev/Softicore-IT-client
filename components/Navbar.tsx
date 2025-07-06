@@ -113,8 +113,8 @@ const Navbar = () => {
             alt="Logo"
             width={100}
             height={100}
-            className="w-36"
-
+            className="w-36 h-auto"
+            priority
           />
 
         </Link>
@@ -150,7 +150,6 @@ const Navbar = () => {
               aria-haspopup="true"
               aria-expanded={isPagesDropdownOpen}
               tabIndex={0}
-              onFocus={() => setIsPagesDropdownOpen(true)}
             >
               Pages <span className="ml-1 text-xl">+</span>
             </button>

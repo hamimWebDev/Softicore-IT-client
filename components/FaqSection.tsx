@@ -4,24 +4,24 @@ import FaqImage from "../Images/faq.jpg";
 
 const faqs = [
   {
-    question: "1. Think ahead & boost your business?",
-    answer: "Our experts help you plan strategically to ensure your business is always ahead of the curve."
+    question: "1. What services does Softicore IT provide?",
+    answer: "We provide web development, mobile app development, software solutions, and IT consulting services to help your business grow."
   },
   {
-    question: "2. How our experts consulter work?",
-    answer: "Our consultants work closely with you to understand your needs and deliver tailored solutions."
+    question: "2. How long does it take to complete a project?",
+    answer: "Project time depends on size and complexity. Small websites take 2-4 weeks, while large applications may take 2-6 months. We always discuss timeline with you first."
   },
   {
-    question: "3. What is the best tips for growth your business?",
-    answer: "Focus on innovation, customer satisfaction, and continuous improvement for sustainable growth."
+    question: "3. Do you provide support after project completion?",
+    answer: "Yes, we provide free support for 3 months after project completion. After that, we offer maintenance packages to keep your system running smoothly."
   },
   {
-    question: "4. How to improved your business?",
-    answer: "Leverage our expertise to identify opportunities and implement effective strategies."
+    question: "4. Can you work with my existing business system?",
+    answer: "Yes, we can integrate our solutions with your current systems. We study your existing setup and make sure everything works together properly."
   },
   {
-    question: "5. How to improved your business?",
-    answer: "Regularly review your processes and adapt to market changes with our guidance."
+    question: "5. How much does a project cost?",
+    answer: "Cost depends on your specific needs. We provide free consultation to understand your requirements and give you a clear price quote before starting work."
   },
 ];
 
@@ -37,12 +37,12 @@ const FaqSection = () => {
       <div className="container-custom mx-auto flex flex-col lg:flex-row gap-16 items-center justify-between">
         {/* Left Side */}
         <div className="flex-1 max-w-xl">
-          <div className="text-indigo-500 font-semibold mb-2 text-lg">Question & Answer</div>
+          <div className="text-indigo-500 font-semibold mb-2 text-lg">Frequently Asked Questions</div>
           <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
-            If You need Any Other <br /> Info Check Our FAQ,s
+            Got Questions? <br /> We Have Answers
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Lorem ipsum dolor seat ameat dui too consecteture elite more occopassional works.A consulting agency are highly trying to them to their clients.
+            Find answers to common questions about our IT services. If you don't see what you're looking for, feel free to contact us directly.
           </p>
           <div className="rounded-xl overflow-hidden shadow-lg w-full max-w-md">
             <Image src={FaqImage} alt="FAQ" className="object-cover w-full h-64" />

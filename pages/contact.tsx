@@ -95,7 +95,7 @@ const Contact: NextPage = () => {
                       </span>
                       <div>
                         <div className="font-semibold text-gray-900 dark:text-white">Phone</div>
-                        <div className="text-gray-400 text-sm">+880 1234-567890</div>
+                        <div className="text-gray-400 text-sm">+880 1768225158</div>
                       </div>
                     </div>
                   </div>

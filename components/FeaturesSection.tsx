@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const features = [
@@ -8,8 +9,8 @@ const features = [
                 <path d="M12 38c0-5.523 5.373-10 12-10s12 4.477 12 10" stroke="currentColor" strokeWidth="2" />
             </svg>
         ),
-        title: "Expert Development Team",
-        desc: "Our skilled developers specialize in modern web technologies including React, Node.js, and cloud solutions."
+        title: "Skilled Development Team",
+        desc: "Our expert team knows modern web technologies like React, Node.js, and cloud solutions very well."
     },
     {
         icon: (
@@ -18,8 +19,8 @@ const features = [
                 <path d="M18 24l4 4 8-8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
         ),
-        title: "Custom Web Solutions",
-        desc: "Tailored websites and applications designed to meet your specific business requirements and goals."
+        title: "Custom Website Solutions",
+        desc: "We make websites and apps that fit your business needs perfectly and help you reach your goals."
     },
     {
         icon: (
@@ -31,8 +32,8 @@ const features = [
                 <polygon points="34,14 36,18 40,18 37,21 38,25 34,22 30,25 31,21 28,18 32,18" fill="currentColor" opacity="0.7" />
             </svg>
         ),
-        title: "E-commerce Development",
-        desc: "Complete online store solutions with secure payment gateways and inventory management systems."
+        title: "Online Store Development",
+        desc: "Complete online shops with safe payment systems and tools to manage your products and orders."
     },
     {
         icon: (
@@ -46,8 +47,8 @@ const features = [
                 </g>
             </svg>
         ),
-        title: "24/7 Support & Maintenance",
-        desc: "Ongoing technical support, updates, and maintenance to keep your digital solutions running smoothly."
+        title: "24/7 Help & Updates",
+        desc: "We provide ongoing support, regular updates, and maintenance to keep your website working smoothly."
     }
 ];
 
@@ -62,11 +63,15 @@ const FeaturesSection = () => {
                         Professional web development <br /> services you can trust.
                     </h2>
                     <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-                        We combine technical expertise with creative design to deliver web solutions that not only look great but also perform exceptionally. Our focus is on creating digital experiences that drive business growth and user engagement.
+                        We mix technical skills with creative design to make websites that look great and work perfectly. Our goal is to create digital solutions that help your business grow and keep your customers happy.
                     </p>
-                    <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow transition-all dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:text-gray-900">
-                        Get Free Quote &rarr;
-                    </button>
+                    <Link
+                        href="/contact"
+                    >
+                        <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 rounded-lg text-lg shadow transition-all dark:bg-indigo-500 dark:hover:bg-indigo-600 dark:text-gray-900">
+                            Get Free Quote &rarr;
+                        </button>
+                    </Link>
                 </div>
                 {/* Right Side */}
                 <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-10 w-full">

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const PiriLoader: React.FC = () => {
   const [progress, setProgress] = useState(0);
   const [stage, setStage] = useState(0);
+  const [lastProgressUpdate, setLastProgressUpdate] = useState(0);
   
   const stages = [
     "Initializing...",
@@ -14,29 +15,41 @@ const PiriLoader: React.FC = () => {
   ];
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress(prev => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + Math.random() * 15;
-      });
-    }, 200);
+    let progressInterval: NodeJS.Timeout;
+    let stageInterval: NodeJS.Timeout;
 
-    const stageInterval = setInterval(() => {
+    // Use requestAnimationFrame for smoother progress updates
+    const updateProgress = () => {
+      const now = Date.now();
+      // Throttle updates to prevent excessive re-renders
+      if (now - lastProgressUpdate > 150) {
+        setProgress(prev => {
+          if (prev >= 100) {
+            return 100;
+          }
+          return prev + Math.random() * 15;
+        });
+        setLastProgressUpdate(now);
+      }
+    };
+
+    // Use requestAnimationFrame for stage updates
+    const updateStage = () => {
       setStage(prev => {
         if (prev >= stages.length - 1) {
-          clearInterval(stageInterval);
           return prev;
         }
         return prev + 1;
       });
-    }, 800);
+    };
+
+    // Start intervals with proper cleanup
+    progressInterval = setInterval(updateProgress, 200);
+    stageInterval = setInterval(updateStage, 800);
 
     return () => {
-      clearInterval(interval);
-      clearInterval(stageInterval);
+      if (progressInterval) clearInterval(progressInterval);
+      if (stageInterval) clearInterval(stageInterval);
     };
   }, []);
 
@@ -55,13 +68,14 @@ const PiriLoader: React.FC = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        <div className="w-24 h-24 relative mb-4">
+        <div className="w-24 h-24 relative mb-4 flex items-center justify-center">
           <Image
             src="/icon/logo.png"
             alt="Softicore IT"
-            width={96}
-            height={96}
+            fill
             className="object-contain animate-pulse"
+            sizes="96px"
+            priority
           />
         </div>
         <h2 className="text-2xl font-bold text-white text-center animate-pulse">
