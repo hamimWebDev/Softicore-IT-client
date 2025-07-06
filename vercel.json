@@ -1,6 +1,3 @@
 {
     "rewrites": []
-    // Removed the rewrite rule that was redirecting all routes to homepage
-    // This was causing issues with dynamic routes like /projects/[id] and /blog/[id]
-    // Next.js handles routing properly without this rewrite rule
 }
