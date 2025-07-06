@@ -24,7 +24,7 @@ const UpdateWorkPage = () => {
 
   // Fetch existing work data using the API
   const { data: workData, isLoading: isLoadingWork } = useGetProductByIdQuery(id as string, {
-    skip: !id,
+    skip: !id || !router.isReady,
   });
 
   // Update form when work data is loaded
@@ -85,13 +85,12 @@ const UpdateWorkPage = () => {
     }
   };
 
-  if (!id) {
+  if (!router.isReady || !id) {
     return (
       <AdminDashboardLayout>
         <PrivateRoute allowedRoles={["admin"]}>
           <div className="max-w-2xl mx-auto mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-            <h1 className="text-2xl font-bold mb-6 text-red-600">Error: No work ID provided</h1>
-            <p>Please go back to the work list and select a work to update.</p>
+            <h1 className="text-2xl font-bold mb-6">Loading...</h1>
           </div>
         </PrivateRoute>
       </AdminDashboardLayout>

@@ -20,15 +20,19 @@ import { IWork } from "@/types/work.types";
 const ProjectDetails: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
+  
+  // Wait for router to be ready before making the query
   const { data: project, isLoading, isError } = useGetProductByIdQuery(id as string, {
-    skip: !id
+    skip: !id || !router.isReady
   }) as { data: IWork | undefined, isLoading: boolean, isError: boolean };
 
-  if (isLoading) {
+  // Show loading while router is not ready or data is loading
+  if (!router.isReady || isLoading) {
     return <ProjectDetailsSkeleton />;
   }
 
-  if (isError || !project) {
+  // Show error if no ID or project not found
+  if (!id || isError || !project) {
     return (
       <ProjectErrorBoundary
         error="The project you're looking for doesn't exist or has been removed."

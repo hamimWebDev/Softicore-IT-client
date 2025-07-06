@@ -26,7 +26,7 @@ const UpdateClientPage = () => {
 
   // Fetch existing client data using the API
   const { data: clientData, isLoading: isLoadingClient } = useGetClientByIdQuery(id as string, {
-    skip: !id,
+    skip: !id || !router.isReady,
   });
 
   // Update form when client data is loaded
@@ -78,13 +78,12 @@ const UpdateClientPage = () => {
     }
   };
 
-  if (!id) {
+  if (!router.isReady || !id) {
     return (
       <AdminDashboardLayout>
         <PrivateRoute allowedRoles={["admin"]}>
           <div className="max-w-2xl mx-auto mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-            <h1 className="text-2xl font-bold mb-6 text-red-600">Error: No client ID provided</h1>
-            <p>Please go back to the clients list and select a client to update.</p>
+            <h1 className="text-2xl font-bold mb-6">Loading...</h1>
           </div>
         </PrivateRoute>
       </AdminDashboardLayout>

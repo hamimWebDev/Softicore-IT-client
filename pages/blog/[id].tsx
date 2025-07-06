@@ -14,11 +14,14 @@ import { IBlog } from "@/components/BlogCard";
 const BlogDetails: NextPage = () => {
   const router = useRouter();
   const { id } = router.query;
+  
+  // Wait for router to be ready before making the query
   const { data: blog, isLoading, isError } = useGetBlogByIdQuery(id as string, {
-    skip: !id
+    skip: !id || !router.isReady
   }) as { data: IBlog | undefined, isLoading: boolean, isError: boolean };
 
-  if (isLoading) {
+  // Show loading while router is not ready or data is loading
+  if (!router.isReady || isLoading) {
     return (
       <div className="pt-32 pb-16 min-h-screen bg-gradient-to-r from-blue-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="container-custom">
@@ -45,7 +48,8 @@ const BlogDetails: NextPage = () => {
     );
   }
 
-  if (isError || !blog) {
+  // Show error if no ID or blog not found
+  if (!id || isError || !blog) {
     return (
       <div className="pt-32 pb-16 min-h-screen bg-gradient-to-r from-blue-100 via-purple-50 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
         <div className="container-custom">

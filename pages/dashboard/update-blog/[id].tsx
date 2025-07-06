@@ -15,7 +15,9 @@ interface Blog {
 const UpdateBlogPage = () => {
   const router = useRouter();
   const { id } = router.query;
-  const { data: blog, isLoading: isLoadingBlog } = useGetBlogByIdQuery(id as string, { skip: !id }) as { data: Blog | undefined, isLoading: boolean };
+  const { data: blog, isLoading: isLoadingBlog } = useGetBlogByIdQuery(id as string, { 
+    skip: !id || !router.isReady 
+  }) as { data: Blog | undefined, isLoading: boolean };
   const [updateBlog, { isLoading, error }] = useUpdateBlogMutation();
 
   const [title, setTitle] = useState("");
@@ -75,12 +77,41 @@ const UpdateBlogPage = () => {
     }
   }
 
+  if (!router.isReady || !id) {
+    return (
+      <AdminDashboardLayout>
+        <PrivateRoute allowedRoles={["admin"]}>
+          <div className="max-w-2xl mx-auto mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+            <h1 className="text-2xl font-bold mb-6">Loading...</h1>
+          </div>
+        </PrivateRoute>
+      </AdminDashboardLayout>
+    );
+  }
+
   if (isLoadingBlog) {
-    return <AdminDashboardLayout><div className="pt-32 text-center">Loading...</div></AdminDashboardLayout>;
+    return (
+      <AdminDashboardLayout>
+        <PrivateRoute allowedRoles={["admin"]}>
+          <div className="max-w-2xl mx-auto mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+            <h1 className="text-2xl font-bold mb-6">Loading...</h1>
+          </div>
+        </PrivateRoute>
+      </AdminDashboardLayout>
+    );
   }
 
   if (!blog) {
-    return <AdminDashboardLayout><div className="pt-32 text-center">Blog not found.</div></AdminDashboardLayout>;
+    return (
+      <AdminDashboardLayout>
+        <PrivateRoute allowedRoles={["admin"]}>
+          <div className="max-w-2xl mx-auto mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
+            <h1 className="text-2xl font-bold mb-6 text-red-600">Blog not found</h1>
+            <p>The blog you're looking for doesn't exist or has been removed.</p>
+          </div>
+        </PrivateRoute>
+      </AdminDashboardLayout>
+    );
   }
 
   return (

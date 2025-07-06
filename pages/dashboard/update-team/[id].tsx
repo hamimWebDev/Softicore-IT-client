@@ -34,7 +34,7 @@ const UpdateTeamPage = () => {
 
   // Fetch existing team member data using the API
   const { data: memberData, isLoading: isLoadingMember } = useGetTeamMemberByIdQuery(id as string, {
-    skip: !id,
+    skip: !id || !router.isReady,
   });
 
   // Update form when member data is loaded
@@ -90,13 +90,12 @@ const UpdateTeamPage = () => {
     }
   };
 
-  if (!id) {
+  if (!router.isReady || !id) {
     return (
       <AdminDashboardLayout>
         <PrivateRoute allowedRoles={["admin"]}>
           <div className="max-w-2xl mx-auto mt-10 bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
-            <h1 className="text-2xl font-bold mb-6 text-red-600">Error: No team member ID provided</h1>
-            <p>Please go back to the team list and select a member to update.</p>
+            <h1 className="text-2xl font-bold mb-6">Loading...</h1>
           </div>
         </PrivateRoute>
       </AdminDashboardLayout>
