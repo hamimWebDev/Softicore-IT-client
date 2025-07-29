@@ -13,6 +13,7 @@ import FeaturesSection from "@/components/FeaturesSection";
 import FaqSection from "@/components/FaqSection";
 import ExpertiesSection from "@/components/ExpertiesSection";
 import { pageSEOConfigs, structuredData } from '@/lib/seo-config';
+import ChatUi from "@/components/ui/ChatUi";
 
 const Home: NextPage = () => {
 
@@ -97,6 +98,12 @@ const Home: NextPage = () => {
               </div>
             </div>
           </section>
+
+          {/* Floating Chat Widget */}
+          <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 50 }}>
+            <ChatUi />
+            
+          </div>
         </motion.div>
       </div>
     </>
