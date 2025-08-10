@@ -100,9 +100,8 @@ const Home: NextPage = () => {
           </section>
 
           {/* Floating Chat Widget */}
-          <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 50 }}>
+          <div style={{ position: "fixed", bottom: 90, right: 24, zIndex: 50 }}>
             <ChatUi />
-            
           </div>
         </motion.div>
       </div>
